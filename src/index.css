@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 196 72% 38%; /* Skyvidya deep blue #1b7fa8 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 187 67% 65%; /* Skyvidya sky blue #65d0e6 */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 152 47% 60%; /* Skyvidya vibrant green #69c998 */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 72% 38%; /* Skyvidya deep blue */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 72% 38%; /* Skyvidya deep blue */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 187 67% 65%; /* Skyvidya sky blue */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 152 47% 60%; /* Skyvidya vibrant green */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 72% 38%; /* Skyvidya deep blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Skyvidya styles */
+.bg-ocean-gradient {
+  background: linear-gradient(135deg, #1b7fa8, #65d0e6);
+}
+
+.bg-earth-gradient {
+  background: linear-gradient(135deg, #69c998, #8edc7f);
+}
+
+.bg-climate-gradient {
+  background: linear-gradient(135deg, #f7a58c, #ffc29e);
+}
+
+.bg-dark-blue-gradient {
+  background: linear-gradient(135deg, #0e3b5a, #1b7fa8);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #1b7fa8, #65d0e6);
+}
+
+.text-earth-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #69c998, #8edc7f);
+}
+
+.text-climate-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #f7a58c, #ffc29e);
+}
+
+.skyvidya-button {
+  @apply bg-skyvidya-cta text-white font-medium py-2 px-4 rounded-md hover:opacity-90 transition-opacity;
+}
+
+.skyvidya-card {
+  @apply bg-white rounded-lg shadow-md border border-skyvidya-mediumGray/20;
+}
+
+.skyvidya-tab {
+  @apply px-4 py-2 text-skyvidya-darkGray hover:text-skyvidya-deepBlue border-b-2 border-transparent hover:border-skyvidya-deepBlue transition-colors;
+}
+
+.skyvidya-tab-active {
+  @apply px-4 py-2 text-skyvidya-deepBlue border-b-2 border-skyvidya-deepBlue font-medium;
+}
+
+/* Animated Hero Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(101, 208, 230, 0.3);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 25px rgba(101, 208, 230, 0.5);
+}
+
+.heading-xl {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.body-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.animated-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.dot-pattern {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+@media (max-width: 768px) {
+  .heading-xl {
+    font-size: 2.5rem;
+  }
+
+  .body-lg {
+    font-size: 1rem;
+  }
+}

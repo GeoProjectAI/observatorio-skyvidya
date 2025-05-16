@@ -1,0 +1,66 @@
+/* Additional styles for the animated hero */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(101, 208, 230, 0.3);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 25px rgba(101, 208, 230, 0.5);
+}
+
+.heading-xl {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.body-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.animated-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.dot-pattern {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+@media (max-width: 768px) {
+  .heading-xl {
+    font-size: 2.5rem;
+  }
+
+  .body-lg {
+    font-size: 1rem;
+  }
+}
