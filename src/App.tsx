@@ -1,24 +1,33 @@
 
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TestComponent from "./components/TestComponent";
+import Home from "./components/home";
 
-console.log("App.tsx: Starting to render simplified App component");
+console.log("App.tsx: Starting to render App with routing");
 
 const App: React.FC = () => {
-  console.log("App.tsx: Simplified App component rendering");
+  console.log("App.tsx: App component rendering with routing");
   
   return (
-    <div className="min-h-screen bg-background p-4">
-      <TestComponent />
-      <div className="mt-4 p-4 bg-green-100 text-green-800 rounded-md">
-        <h2 className="text-xl font-bold">Step 1: Basic App Working</h2>
-        <p>If you see this, the basic React setup is functional!</p>
-        <p>Next step: We'll gradually add back the complex components.</p>
+    <Router>
+      <div className="min-h-screen bg-background">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/test" element={<TestComponent />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+        
+        <div className="fixed bottom-4 left-4 p-4 bg-green-100 text-green-800 rounded-md text-sm">
+          <h3 className="font-bold">Step 2: Routing Added</h3>
+          <p>✅ React Router working</p>
+          <p>✅ Basic navigation functional</p>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 };
 
-console.log("App.tsx: Simplified App component defined");
+console.log("App.tsx: App component with routing defined");
 
 export default App;
