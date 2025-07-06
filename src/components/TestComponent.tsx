@@ -1,7 +1,9 @@
 
 import React from "react";
 
-const TestComponent: React.FC = () => {
+interface TestComponentProps {}
+
+const TestComponent: React.FC<TestComponentProps> = () => {
   console.log("TestComponent: Rendering test component - Step 1 complete");
   
   return (

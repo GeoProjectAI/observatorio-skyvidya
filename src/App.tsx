@@ -4,7 +4,7 @@ import TestComponent from "./components/TestComponent";
 
 console.log("App.tsx: Starting to render simplified App component");
 
-function App() {
+const App: React.FC = () => {
   console.log("App.tsx: Simplified App component rendering");
   
   return (
@@ -17,7 +17,7 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 console.log("App.tsx: Simplified App component defined");
 
