@@ -1,12 +1,9 @@
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-
-// Initialize Tempo Devtools
-import { TempoDevtools } from "tempo-devtools";
-TempoDevtools.init();
 
 // Error boundary for better error handling
 import { ErrorBoundary } from "./components/ui/error-boundary";

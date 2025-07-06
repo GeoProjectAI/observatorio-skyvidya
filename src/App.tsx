@@ -27,24 +27,15 @@ function App() {
         <Route path="/observatory/*" element={<Observatory />} />
 
         {/* Legacy routes - redirect to observatory */}
-        <Route path="/dashboard" element={<Navigate to="/observatory" />} />
-        <Route path="/map" element={<Navigate to="/observatory/map" />} />
-        <Route
-          path="/weather"
-          element={<Navigate to="/observatory/weather" />}
-        />
-        <Route
-          path="/monitoring"
-          element={<Navigate to="/observatory/monitoring" />}
-        />
-        <Route
-          path="/alerts"
-          element={<Navigate to="/observatory/alerts" />}
-        />
-        <Route path="/ai" element={<Navigate to="/observatory/ai" />} />
+        <Route path="/dashboard" element={<Navigate to="/observatory" replace />} />
+        <Route path="/map" element={<Navigate to="/observatory/map" replace />} />
+        <Route path="/weather" element={<Navigate to="/observatory/weather" replace />} />
+        <Route path="/monitoring" element={<Navigate to="/observatory/monitoring" replace />} />
+        <Route path="/alerts" element={<Navigate to="/observatory/alerts" replace />} />
+        <Route path="/ai" element={<Navigate to="/observatory/ai" replace />} />
 
         {/* Catchall route */}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>
   );
