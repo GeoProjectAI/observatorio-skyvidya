@@ -22,6 +22,18 @@ export default defineConfig({
   },
   server: {
     port: 8080,
-    host: true
+    host: true,
+    hmr: {
+      port: 8080,
+      overlay: false
+    },
+    watch: {
+      usePolling: true,
+      interval: 1000
+    },
+    cors: true
+  },
+  optimizeDeps: {
+    exclude: ['@deck.gl/core', '@deck.gl/layers', '@deck.gl/geo-layers']
   }
 })

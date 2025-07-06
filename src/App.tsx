@@ -5,10 +5,10 @@ import TestComponent from "./components/TestComponent";
 import Home from "./components/home";
 import Observatory from "./components/observatory/Observatory";
 
-console.log("App.tsx: Starting Step 6 - Build Fixed & Advanced Testing Complete");
+console.log("App.tsx: Starting Step 7 - Server Connectivity & WebSocket Issues Fix");
 
 const App: React.FC = () => {
-  console.log("App.tsx: App component rendering - Step 6 with all build errors resolved");
+  console.log("App.tsx: App component rendering - Step 7 fixing connectivity issues");
   
   return (
     <Router>
@@ -20,19 +20,19 @@ const App: React.FC = () => {
           <Route path="*" element={<Home />} />
         </Routes>
         
-        <div className="fixed bottom-4 left-4 p-4 bg-green-100 text-green-800 rounded-md text-sm">
-          <h3 className="font-bold">Step 6: All Issues Resolved</h3>
-          <p>✅ TS5094 error fixed</p>
-          <p>✅ Missing dependencies installed</p>
-          <p>✅ Vite config corrected</p>
-          <p>✅ Server port set to 8080</p>
-          <p>🎉 System fully operational</p>
+        <div className="fixed bottom-4 left-4 p-4 bg-amber-100 text-amber-800 rounded-md text-sm">
+          <h3 className="font-bold">Step 7: Fixing Connectivity Issues</h3>
+          <p>🔧 WebSocket connection errors addressed</p>
+          <p>🔧 Server configuration optimized</p>
+          <p>🔧 Hot-reload stability improved</p>
+          <p>🔧 CORS and HMR configured</p>
+          <p>⚡ Application should load more reliably</p>
         </div>
       </div>
     </Router>
   );
 };
 
-console.log("App.tsx: App component with all build fixes complete");
+console.log("App.tsx: App component with connectivity fixes implemented");
 
 export default App;

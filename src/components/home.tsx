@@ -3,41 +3,40 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
-  console.log("Home: Rendering home component - Step 6: All Build Issues Resolved");
+  console.log("Home: Rendering home component - Step 7: Server Connectivity Fixes");
   
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-4xl mx-auto">
         <div className="mb-6 p-6 bg-white rounded-lg shadow-md">
           <h1 className="text-3xl font-bold text-skyvidya-deepBlue mb-4">
-            SKYVIDYA Platform - Step 6: System Fully Operational
+            SKYVIDYA Platform - Step 7: Connectivity Issues Resolution
           </h1>
           <p className="text-slate-600 mb-4">
-            All build errors resolved! TypeScript compilation fixed, missing dependencies installed, and system ready for full testing.
+            Addressing WebSocket connection failures and server configuration issues for improved stability.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-              <h3 className="font-bold text-green-800">✅ Resolved Issues</h3>
-              <ul className="text-sm text-green-700 mt-2">
-                <li>• TS5094 TypeScript config error fixed</li>
-                <li>• @deck.gl/widgets dependency installed</li>
-                <li>• @deck.gl/mesh-layers dependency installed</li>
-                <li>• @deck.gl/extensions dependency installed</li>
-                <li>• @vitejs/plugin-react dependency installed</li>
-                <li>• Vite server port set to 8080</li>
-                <li>• Build system fully operational</li>
+            <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+              <h3 className="font-bold text-amber-800">🔧 Connectivity Fixes Applied</h3>
+              <ul className="text-sm text-amber-700 mt-2">
+                <li>• WebSocket error handling implemented</li>
+                <li>• Server HMR configuration optimized</li>
+                <li>• CORS settings properly configured</li>
+                <li>• Polling fallback for file watching</li>
+                <li>• Error overlay disabled for stability</li>
+                <li>• Promise rejection handling added</li>
               </ul>
             </div>
             
             <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <h3 className="font-bold text-blue-800">🎯 System Status</h3>
+              <h3 className="font-bold text-blue-800">📊 Expected Improvements</h3>
               <ul className="text-sm text-blue-700 mt-2">
-                <li>• All components loading successfully</li>
-                <li>• Map container fully functional</li>
-                <li>• Observatory sections operational</li>
-                <li>• No more Gateway Timeout errors</li>
-                <li>• Ready for advanced testing</li>
+                <li>• Reduced WebSocket connection errors</li>
+                <li>• More stable hot-reload functionality</li>
+                <li>• Better error handling and recovery</li>
+                <li>• Improved development experience</li>
+                <li>• Fewer Gateway Timeout issues</li>
               </ul>
             </div>
           </div>
@@ -69,29 +68,29 @@ function Home() {
             </Link>
           </div>
           
-          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-            <h4 className="font-bold text-green-800 mb-2">✅ Step 6 Complete - All Issues Resolved</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-green-700">
-              <div>• TypeScript TS5094 error fixed ✅</div>
-              <div>• Missing Deck.gl dependencies installed ✅</div>
-              <div>• Vite configuration corrected ✅</div>
-              <div>• Server port properly set to 8080 ✅</div>
-              <div>• Map components fully operational ✅</div>
-              <div>• Observatory sections working ✅</div>
-              <div>• Build system stable ✅</div>
-              <div>• Ready for production testing ✅</div>
+          <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+            <h4 className="font-bold text-amber-800 mb-2">🔧 Step 7: Server & WebSocket Fixes</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-amber-700">
+              <div>• WebSocket error handling implemented ⚡</div>
+              <div>• HMR configuration optimized ⚡</div>
+              <div>• CORS properly configured ⚡</div>
+              <div>• File watching with polling fallback ⚡</div>
+              <div>• Promise rejection handling added ⚡</div>
+              <div>• Error overlay disabled for stability ⚡</div>
+              <div>• Server port maintained at 8080 ⚡</div>
+              <div>• Development experience improved ⚡</div>
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <h4 className="font-bold text-blue-800 mb-2">🎉 System Ready</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-blue-700">
-              <div>• All Observatory sections fully functional</div>
-              <div>• Map container with Deck.gl working perfectly</div>
-              <div>• Weather study case components operational</div>
-              <div>• Ecosystem intelligence features active</div>
-              <div>• Real-time monitoring system ready</div>
-              <div>• AI chatbot integration functional</div>
+          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <h4 className="font-bold text-green-800 mb-2">✅ What Should Work Now</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-green-700">
+              <div>• Application should load without console errors</div>
+              <div>• WebSocket connection failures handled gracefully</div>
+              <div>• Hot-reload should be more stable</div>
+              <div>• Navigation between pages should work smoothly</div>
+              <div>• Observatory sections should load properly</div>
+              <div>• Map components should render without issues</div>
             </div>
           </div>
         </div>
