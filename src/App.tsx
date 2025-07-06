@@ -1,44 +1,47 @@
 
-import { Suspense, lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 
-// Lazy load components for better performance
-const Observatory = lazy(() => import("./components/observatory/Observatory"));
-const LandingPage = lazy(() => import("./components/landing/LandingPage"));
+// Test component for debugging
+import TestComponent from "./components/TestComponent";
+
+// Direct imports instead of lazy loading for debugging
+import Observatory from "./components/observatory/Observatory";
+import LandingPage from "./components/landing/LandingPage";
+
+console.log("App.tsx: Starting to render App component");
 
 function App() {
+  console.log("App.tsx: App component rendering");
+  
+  // Temporarily show test component to verify basic rendering
   return (
-    <Suspense
-      fallback={
-        <div className="flex items-center justify-center h-screen w-screen bg-background">
-          <div className="flex flex-col items-center gap-4">
-            <Loader2 className="h-12 w-12 text-blue-600 animate-spin" />
-            <p className="text-lg font-medium">Loading SKYVIDYA Platform...</p>
-          </div>
-        </div>
-      }
-    >
-      <Routes>
-        {/* Landing page (marketing platform) */}
-        <Route path="/" element={<LandingPage />} />
+    <div className="min-h-screen bg-background p-4">
+      <TestComponent />
+      <div className="mt-4">
+        <Routes>
+          {/* Landing page (marketing platform) */}
+          <Route path="/" element={<LandingPage />} />
 
-        {/* Observatory platform (SaaS) with all features */}
-        <Route path="/observatory/*" element={<Observatory />} />
+          {/* Observatory platform (SaaS) with all features */}
+          <Route path="/observatory/*" element={<Observatory />} />
 
-        {/* Legacy routes - redirect to observatory */}
-        <Route path="/dashboard" element={<Navigate to="/observatory" replace />} />
-        <Route path="/map" element={<Navigate to="/observatory/map" replace />} />
-        <Route path="/weather" element={<Navigate to="/observatory/weather" replace />} />
-        <Route path="/monitoring" element={<Navigate to="/observatory/monitoring" replace />} />
-        <Route path="/alerts" element={<Navigate to="/observatory/alerts" replace />} />
-        <Route path="/ai" element={<Navigate to="/observatory/ai" replace />} />
+          {/* Legacy routes - redirect to observatory */}
+          <Route path="/dashboard" element={<Navigate to="/observatory" replace />} />
+          <Route path="/map" element={<Navigate to="/observatory/map" replace />} />
+          <Route path="/weather" element={<Navigate to="/observatory/weather" replace />} />
+          <Route path="/monitoring" element={<Navigate to="/observatory/monitoring" replace />} />
+          <Route path="/alerts" element={<Navigate to="/observatory/alerts" replace />} />
+          <Route path="/ai" element={<Navigate to="/observatory/ai" replace />} />
 
-        {/* Catchall route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Suspense>
+          {/* Catchall route */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
+
+console.log("App.tsx: App component defined");
 
 export default App;
