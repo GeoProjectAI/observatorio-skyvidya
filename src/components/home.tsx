@@ -3,8 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
-  console.log("Home: Component rendering");
-  
   return (
     <div className="min-h-screen bg-white p-8">
       <div className="max-w-4xl mx-auto">
@@ -45,10 +43,10 @@ function Home() {
           
           <div className="bg-green-50 border border-green-200 rounded-lg p-6">
             <h3 className="text-green-800 font-bold text-xl mb-3">
-              ✅ Sistema Carregado
+              ✅ Sistema SKYVIDYA
             </h3>
             <p className="text-green-700">
-              O sistema SKYVIDYA está funcionando corretamente. Use os botões acima para navegar.
+              Plataforma de observatório inteligente para análise de ecossistemas funcionando corretamente.
             </p>
           </div>
         </div>

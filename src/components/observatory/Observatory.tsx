@@ -27,19 +27,9 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Separator } from "@/components/ui/separator";
-
-console.log("Observatory: Starting Observatory component initialization - Step 4");
 
 // Create a context to share selected dimension data across components
 export interface SkyvidyaContextType {
@@ -70,8 +60,6 @@ export const SkyvidyaContext = createContext<SkyvidyaContextType>({
 export const useSkyvidyaContext = () => useContext(SkyvidyaContext);
 
 const Observatory = () => {
-  console.log("Observatory: Rendering Observatory component - Step 4 testing");
-  
   const navigate = useNavigate();
   const location = useLocation();
   const [activeSection, setActiveSection] = useState<string>("framework");
@@ -103,22 +91,18 @@ const Observatory = () => {
 
   // Extract the current section from the URL path
   useEffect(() => {
-    console.log("Observatory: URL changed to:", location.pathname);
     const path = location.pathname.split("/");
     const section = path[path.length - 1];
 
     if (section && section !== "observatory") {
-      console.log("Observatory: Setting active section to:", section);
       setActiveSection(section);
     } else {
-      console.log("Observatory: Defaulting to framework section");
       setActiveSection("framework");
       navigate("/observatory/framework", { replace: true });
     }
   }, [location.pathname, navigate]);
 
   const handleNavigate = (route: string) => {
-    console.log("Observatory: Navigating to:", route);
     setActiveSection(route);
     navigate(`/observatory/${route}`);
   };
@@ -144,41 +128,6 @@ const Observatory = () => {
         return <Info className="h-5 w-5" />;
     }
   };
-
-  // Component Testing Status Card
-  const ComponentTestCard = () => (
-    <Card className="mb-6 bg-blue-50 border-blue-200">
-      <CardContent className="py-4">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <Database className="h-5 w-5 text-blue-600" />
-            <div>
-              <h3 className="text-sm font-medium text-blue-900">
-                Observatory Component Testing - Step 4
-              </h3>
-              <p className="text-xs text-blue-700">
-                Testing individual Observatory sections and framework components
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
-            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              ✅ Framework Working
-            </Badge>
-            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              ✅ Navigation Active
-            </Badge>
-            <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-200">
-              🔄 Testing Sections
-            </Badge>
-            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-              📊 Active: {activeSection}
-            </Badge>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
 
   // Alert component for the alerts section
   const AlertsSection = () => (
@@ -283,7 +232,6 @@ const Observatory = () => {
 
   // Function to navigate to ecosystem with selected dimension
   const navigateToEcosystem = (dimension: string) => {
-    console.log("Observatory: Navigating to ecosystem with dimension:", dimension);
     setSelectedDimension(dimension);
     navigate("/observatory/ecosystem");
     setActiveSection("ecosystem");
@@ -298,14 +246,10 @@ const Observatory = () => {
     setEcosystemType,
   };
 
-  console.log("Observatory: Context value prepared:", contextValue);
-
   return (
     <SkyvidyaContext.Provider value={contextValue}>
       <AppLayout onNavigate={handleNavigate} activeRoute={activeSection}>
         <div className="h-full w-full p-4 bg-slate-50">
-          <ComponentTestCard />
-          
           {/* Navigation tabs for Observatory sections */}
           <div className="mb-6 border-b">
             <div className="flex space-x-1 overflow-x-auto pb-2">
@@ -405,8 +349,6 @@ const Observatory = () => {
     </SkyvidyaContext.Provider>
   );
 };
-
-console.log("Observatory: Observatory component definition complete");
 
 export { Observatory };
 export default Observatory;

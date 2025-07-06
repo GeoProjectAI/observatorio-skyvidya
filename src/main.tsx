@@ -4,10 +4,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-console.log("main.tsx: Starting application");
-
 const rootElement = document.getElementById("root");
-console.log("main.tsx: root element found:", !!rootElement);
 
 if (rootElement) {
   const root = createRoot(rootElement);
@@ -16,7 +13,4 @@ if (rootElement) {
       <App />
     </React.StrictMode>
   );
-  console.log("main.tsx: Application rendered successfully");
-} else {
-  console.error("main.tsx: Root element not found!");
 }
