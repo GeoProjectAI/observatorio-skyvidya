@@ -1,6 +1,6 @@
+
 import { Suspense, lazy } from "react";
-import { useRoutes, Routes, Route, Navigate } from "react-router-dom";
-import routes from "tempo-routes";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 
 // Lazy load components for better performance
@@ -19,44 +19,33 @@ function App() {
         </div>
       }
     >
-      <>
-        {/* Tempo routes for storyboards */}
-        {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
+      <Routes>
+        {/* Landing page (marketing platform) */}
+        <Route path="/" element={<LandingPage />} />
 
-        {/* Main application routes */}
-        <Routes>
-          {/* Landing page (marketing platform) */}
-          <Route path="/" element={<LandingPage />} />
+        {/* Observatory platform (SaaS) with all features */}
+        <Route path="/observatory/*" element={<Observatory />} />
 
-          {/* Observatory platform (SaaS) with all features */}
-          <Route path="/observatory/*" element={<Observatory />} />
+        {/* Legacy routes - redirect to observatory */}
+        <Route path="/dashboard" element={<Navigate to="/observatory" />} />
+        <Route path="/map" element={<Navigate to="/observatory/map" />} />
+        <Route
+          path="/weather"
+          element={<Navigate to="/observatory/weather" />}
+        />
+        <Route
+          path="/monitoring"
+          element={<Navigate to="/observatory/monitoring" />}
+        />
+        <Route
+          path="/alerts"
+          element={<Navigate to="/observatory/alerts" />}
+        />
+        <Route path="/ai" element={<Navigate to="/observatory/ai" />} />
 
-          {/* Legacy routes - redirect to observatory */}
-          <Route path="/dashboard" element={<Navigate to="/observatory" />} />
-          <Route path="/map" element={<Navigate to="/observatory/map" />} />
-          <Route
-            path="/weather"
-            element={<Navigate to="/observatory/weather" />}
-          />
-          <Route
-            path="/monitoring"
-            element={<Navigate to="/observatory/monitoring" />}
-          />
-          <Route
-            path="/alerts"
-            element={<Navigate to="/observatory/alerts" />}
-          />
-          <Route path="/ai" element={<Navigate to="/observatory/ai" />} />
-
-          {/* Add route for Tempo storyboards to prevent catchall from capturing them */}
-          {import.meta.env.VITE_TEMPO === "true" && (
-            <Route path="/tempobook/*" />
-          )}
-
-          {/* Catchall route */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </>
+        {/* Catchall route */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </Suspense>
   );
 }
