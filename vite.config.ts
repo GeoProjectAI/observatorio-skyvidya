@@ -13,8 +13,5 @@ export default defineConfig({
   server: {
     port: 8080,
     open: true,
-  },
-  build: {
-    target: 'es2020'
   }
 })
