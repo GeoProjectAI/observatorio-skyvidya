@@ -11,10 +11,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    outDir: 'dist',
-    sourcemap: true,
-  },
   server: {
     port: 8080,
     open: true,
