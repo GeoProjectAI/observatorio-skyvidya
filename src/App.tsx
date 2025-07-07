@@ -5,6 +5,8 @@ import Home from "./components/home";
 import Observatory from "./components/observatory/Observatory";
 
 const App: React.FC = () => {
+  console.log("App component rendering");
+  
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
