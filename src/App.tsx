@@ -1,7 +1,7 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/home";
+import Home from "./components/Home";
 import Observatory from "./components/observatory/Observatory";
 
 const App: React.FC = () => {
