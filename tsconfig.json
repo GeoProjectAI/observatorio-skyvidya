@@ -12,10 +12,11 @@
     "jsx": "react-jsx",
     "strict": false,
     "noEmit": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "vite.config.ts"],
   "exclude": ["src/tempobook"]
 }
