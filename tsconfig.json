@@ -11,7 +11,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "strict": false,
-    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/*"]
