@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSkyvidyaContext } from "../observatory/Observatory";
+import { useSkyvidyaContext } from "../observatory/context/SkyvidyaContext";
 import {
   Card,
   CardContent,
