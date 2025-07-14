@@ -9,7 +9,11 @@ export default defineConfig({
     port: 8080,
   },
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: []
+      }
+    }),
     componentTagger(),
   ],
   resolve: {
@@ -17,4 +21,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  define: {
+    'process.env': {}
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom']
+  }
 })
