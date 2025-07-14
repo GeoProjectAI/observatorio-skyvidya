@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
-import { componentTagger } from "lovable-tagger"
 
 export default defineConfig({
   server: {
@@ -9,12 +8,7 @@ export default defineConfig({
     port: 8080,
   },
   plugins: [
-    react({
-      babel: {
-        plugins: []
-      }
-    }),
-    componentTagger(),
+    react(),
   ],
   resolve: {
     alias: {
@@ -23,8 +17,5 @@ export default defineConfig({
   },
   define: {
     'process.env': {}
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom']
   }
 })
